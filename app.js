@@ -10,7 +10,7 @@ const PE = process.env;
  * step 2: connect with your mongodb atlas account
  * step 3: hide credential info using dotenv
  * step 4: create a Object Model(OM) for some data using "Schema" concept
- * step 05: save something in database(DB)
+ * step 5: save something in database(DB)
  */
 const mongoose = require('mongoose')
 // connecting to DB
@@ -20,28 +20,11 @@ mongoose
     console.log('Database(DB) is connected successfully with port 27017')
 })
 .catch(error=> console.log(error))
-
-// Save user data
-/**
- * step 01: Import model
- */
-const User = require('./model/user')
 app.use(express.json())
-// Routes to save data
-app.post('/create/user', (req, res)=>{
-    // step 02: create an Schema object with data
-    let newUser = new User({
-        fullname: req.body.fullname,
-        country: req.body.country,
-        age: 32,
-        gender: ""
-    })
-    // step 03: Save this data
-    newUser.save((err, data)=>{
-        res.json(data)
-    })
-})
 
+// routes to use
+const userRouter = require('./routes/userRouter')
+app.use('/user', userRouter)
 
 app.listen(PORT, (req, res)=> {
     console.log('Start...Server is running successfully on port ' + PORT)

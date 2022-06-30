@@ -1,0 +1,25 @@
+Please follow below instruction and complete the tasks:
+task 01: create a Schema object inside model/product.js folder called "product" which holds these infos: 
+- product_title(e.g Macbook pro),
+- original_price(e.g 2000), 
+- tax(e.g 2%), 
+- price_with_tax(e.g 2200), 
+- quantity(e.g 64), 
+- seller(e.g icoder GmBh), 
+- delivery_fee(e.g 3.95 euro)
+- category(e.g phone/food/clothes etc.)
+- sold(e.g 20)
+- added_at(e.g 12/03/2021)
+- created_by(e.g arif)
+
+Note: you may add more field if you like after add all this. You must decide yourself the type of Data as String, Number , Date or anything you feel okay
+
+task 02: make this schema into a model and export it
+task 03: create a route controller to  store this data inside your DB using postman
+task 04: create another routes where you can see all data for product collection using find()
+task 05: update 1 existing Data
+task 06: delete 1 product from database
+
+Bonus task: Please do CRUD by testing in postman and if successful you may think of react frontend to do the same task 
+
+happy coding!
